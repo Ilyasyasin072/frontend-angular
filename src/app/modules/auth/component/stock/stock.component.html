@@ -1,0 +1,68 @@
+<mat-toolbar class="toolbar" role="banner">
+        <mat-toolbar-row>
+            <span>Menu Apps</span> &nbsp;
+            <button mat-button routerLink="/" routerLinkActive="active">Dashboard</button>
+            <button mat-button [matMenuTriggerFor]="menulist">Menu List</button>
+            <mat-menu #menulist="matMenu">
+                <button mat-menu-item [matMenuTriggerFor]="movies">Movies</button>
+                <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
+            </mat-menu>
+    
+            <mat-menu #movies="matMenu">
+                <button mat-menu-item routerLink="/movies" routerLinkActive="active">Movies List</button>
+            </mat-menu>
+    
+            <mat-menu #customers="matMenu">
+                <button mat-menu-item routerLink="/customers" routerLinkActive="active">Customer List</button>
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <br>
+    <br>
+
+<div class="content" role="main">
+    <div class="container">
+        <div class="container">
+            <mat-card>
+                <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Customer Name</mat-label>
+                        <input matInput [(ngModel)]="selectedStock.stock" name="stock" required>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Customer Address</mat-label>
+                        <textarea matInput [(ngModel)]="selectedStock.id_inventory" name="stock" required></textarea>
+                    </mat-form-field>
+
+                    <button mat-raised-button (click)="createStock()">Add Movie Data</button>
+                </form>
+            </mat-card>
+        </div>
+
+        <p>
+            <p>
+                <br>
+                <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="">
+                    <thead>
+                        <tr>
+                            <th>Name Customers</th>
+                            <th>Customers Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let stock of stocks">
+                            <td>{{stock.stock}}</td>
+                            <td>{{stock.id_inventory}}</td>
+                            <td><button mat-raised-button (click)="StockClicked(stock)">Views</button>
+                                <button mat-raised-button *ngIf="selectedStock.id != -1"
+                                    (click)="updateStock()">Edit</button>
+                                <button mat-raised-button *ngIf="selectedStock.id != -1"
+                                    (click)="deleteStock()">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+</div>
+<router-outlet></router-outlet>

@@ -5,6 +5,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { LandingComponent } from './component/landing/landing.component';
 import { CustomersComponent } from './component/customers/customers.component';
 import { MoviesComponent } from './component/movies/movies.component';
+import { StockComponent } from './component/stock/stock.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'movies',
     component: MoviesComponent
+  },
+  {
+    path: 'stocks',
+    component: StockComponent
   },
   {
     path: '**',

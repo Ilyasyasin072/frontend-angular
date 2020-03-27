@@ -18,10 +18,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LandingModalComponent } from './component/landing-modal/landing-modal.component';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { StockComponent } from './component/stock/stock.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, LandingComponent, MoviesComponent, CustomersComponent, LandingModalComponent],
+  declarations: [LoginComponent, RegisterComponent, LandingComponent, MoviesComponent, CustomersComponent, LandingModalComponent,
+    StockComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
