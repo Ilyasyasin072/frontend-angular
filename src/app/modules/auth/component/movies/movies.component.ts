@@ -17,7 +17,7 @@ export class MoviesComponent implements OnInit {
   // httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private api: MovieService) {
     this.getMovies();
-    this.selectedMovie = {id: -1, title: '', desc: '', year: ''};
+    this.selectedMovie = {id: -1, title: '', desc: '', year: 0};
     // this.http.get(this.baseurl + '/customers/',
     // {headers: this.httpHeaders}).subscribe(data => {
     //   this.data.push(data);
