@@ -9,7 +9,7 @@ import { CustomerService } from './customer.service';
 })
 export class CustomersComponent implements OnInit {
 
-  customer = [{ name: 'test' }];
+  customer = [{ name: 'Data Tidak ada', address: 'Data tidak ada', tlp: 'Data tidak ada' }];
   // NgModel di views
   selectedCustomer;
   constructor(private api: CustomerService) {

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { LandingModalComponent } from '../landing-modal/landing-modal.component';
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-landing',
@@ -7,7 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  animal: string;
+  name: string;
+
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(LandingModalComponent, dialogConfig);
+}
 
   ngOnInit(): void {
   }

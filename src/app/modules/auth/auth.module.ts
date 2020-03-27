@@ -13,10 +13,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { DataTablesModule } from 'angular-datatables';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LandingModalComponent } from './component/landing-modal/landing-modal.component';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, LandingComponent, MoviesComponent, CustomersComponent],
+  declarations: [LoginComponent, RegisterComponent, LandingComponent, MoviesComponent, CustomersComponent, LandingModalComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -25,7 +30,11 @@ import { DataTablesModule } from 'angular-datatables';
     MatFormFieldModule,
     MatInputModule,
     DataTablesModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatListModule,
+    MatMenuModule
   ]
 })
 export class AuthModule { }

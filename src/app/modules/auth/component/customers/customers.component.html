@@ -11,17 +11,17 @@
                 <form class="example-form">
                     <mat-form-field class="example-full-width">
                         <mat-label>Customer Name</mat-label>
-                        <input matInput [(ngModel)]="selectedCustomer.name" name="name">
+                        <input matInput [(ngModel)]="selectedCustomer.name" name="name" required>
                     </mat-form-field>
 
                     <mat-form-field class="example-full-width">
                         <mat-label>Customer Address</mat-label>
-                        <textarea matInput [(ngModel)]="selectedCustomer.address" name="address"></textarea>
+                        <textarea matInput [(ngModel)]="selectedCustomer.address" name="address" required></textarea>
                     </mat-form-field>
 
                     <mat-form-field class="example-full-width">
                         <mat-label>Customer Tlp</mat-label>
-                        <input matInput [(ngModel)]="selectedCustomer.tlp" name="tlp">
+                        <input matInput [(ngModel)]="selectedCustomer.tlp" name="tlp" required>
                     </mat-form-field>
 
                     <button mat-raised-button (click)="createCustomer()">Add Movie Data</button>
@@ -35,8 +35,9 @@
                 <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Domain</th>
+                            <th>Name Customers</th>
+                            <th>Customers Address</th>
+                            <th>Customers Telepon</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -44,6 +45,7 @@
                         <tr *ngFor="let customer of customer">
                             <td>{{customer.name}}</td>
                             <td>{{customer.address}}</td>
+                            <td>{{customer.tlp}}</td>
                             <td><button mat-raised-button (click)="movieClicked(customer)">Views</button>
                                 <button mat-raised-button *ngIf="selectedCustomer.id != -1"
                                     (click)="updateCustomer()">Edit</button>
